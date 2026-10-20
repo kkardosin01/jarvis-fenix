@@ -38,7 +38,7 @@ function CartaoNumero({
     >
       <Icone size={26} aria-hidden className={cx(destaque && tom === 'perigo' && 'text-perigo', destaque && tom === 'alerta' && 'text-alerta', !destaque && 'text-primaria')} />
       <div>
-        <p className="tabular text-4xl font-bold leading-none">{numero}</p>
+        <p className="numero text-5xl leading-none">{numero}</p>
         <p className="mt-1 text-base font-semibold leading-tight">{rotulo}</p>
         {detalhe && <p className="tabular text-sm text-suave">{detalhe}</p>}
       </div>
@@ -57,8 +57,8 @@ export default function Hoje() {
     <PuxarParaAtualizar>
       <header className="pt-seguro flex items-start justify-between gap-3 px-4 pt-5">
         <div>
-          <p suppressHydrationWarning className="text-base text-suave first-letter:uppercase">{dataPorExtenso()}</p>
-          <h1 suppressHydrationWarning className="text-3xl font-bold">{saudacao()}, Tulio</h1>
+          <p suppressHydrationWarning className="sobretitulo">{dataPorExtenso()}</p>
+          <h1 suppressHydrationWarning className="mt-1 text-4xl">{saudacao()}, Tulio</h1>
         </div>
         <Link href="/configuracoes" aria-label="Configurações" className="flex size-12 items-center justify-center rounded-full border border-borda bg-superficie">
           <Settings size={24} aria-hidden />
@@ -116,11 +116,11 @@ export default function Hoje() {
 
               {dados.prioridades.length > 0 && (
                 <Cartao>
-                  <h2 className="mb-3 text-xl font-bold">Prioridades de hoje</h2>
+                  <h2 className="mb-3 text-2xl">Prioridades de hoje</h2>
                   <ol className="flex flex-col gap-4">
                     {dados.prioridades.slice(0, 3).map((p, i) => (
                       <li key={i} className="flex gap-3">
-                        <span className="tabular flex size-9 shrink-0 items-center justify-center rounded-full bg-primaria text-lg font-bold text-primaria-texto">{i + 1}</span>
+                        <span className="numero flex size-9 shrink-0 items-center justify-center rounded-full bg-primaria text-lg text-primaria-texto">{i + 1}</span>
                         <div>
                           <p className="text-lg leading-snug font-semibold">{p.prioridade}</p>
                           {p.porQue && <p className="text-base text-suave">{p.porQue}</p>}

@@ -3,7 +3,9 @@ import { signOut } from '@/auth'
 export default function NaoAutorizado() {
   return (
     <main className="mx-auto flex min-h-dvh max-w-md flex-col justify-center gap-6 px-6 text-center">
-      <h1 className="text-3xl font-bold">Acesso não autorizado</h1>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/marca/fenix-emblema.png" alt="" width={120} height={107} className="mx-auto" />
+      <h1 className="text-4xl">Acesso não autorizado</h1>
       <p className="text-lg text-suave">
         Esta conta Google não tem permissão para usar o Jarvis Fênix. Entre com o e-mail cadastrado ou fale com o Pedro.
       </p>

@@ -1,42 +1,43 @@
 @import 'tailwindcss';
 
-/* Paleta sóbria de empresa de saúde. Contraste AA nos dois temas. */
+/* Identidade do site da Fênix (comercial-fenix): preto, carvão, dourado e creme.
+   Tema escuro = o do site; tema claro = creme com dourado escuro ("ouro-tinta"). Contraste AA nos dois. */
 :root {
-  --fundo: #f4f6f8;
-  --superficie: #ffffff;
-  --superficie-2: #eef1f4;
-  --texto: #111827;
-  --texto-suave: #4b5563;
-  --borda: #d6dbe1;
-  --primaria: #0f5c56;
+  --fundo: #f5f1e8;
+  --superficie: #fffdf8;
+  --superficie-2: #ece6d8;
+  --texto: #141414;
+  --texto-suave: #555049;
+  --borda: #dcd2bd;
+  --primaria: #7a5a22;
   --primaria-texto: #ffffff;
-  --primaria-suave: #e3f0f3;
-  --perigo: #b42318;
-  --perigo-suave: #fde8e7;
-  --alerta: #8a5300;
-  --alerta-suave: #fdf1d8;
-  --ok: #1d6b3a;
-  --ok-suave: #e3f3e8;
+  --primaria-suave: #f1e6cf;
+  --perigo: #a3271b;
+  --perigo-suave: #f9e3df;
+  --alerta: #8f4a00;
+  --alerta-suave: #fbe8d2;
+  --ok: #1f6b3a;
+  --ok-suave: #e1f1e5;
   color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --fundo: #0e1116;
-    --superficie: #171b22;
-    --superficie-2: #1f252e;
-    --texto: #f1f4f8;
-    --texto-suave: #aab3bf;
-    --borda: #2e3642;
-    --primaria: #6ccbb8;
-    --primaria-texto: #062420;
-    --primaria-suave: #12313a;
-    --perigo: #ff8a80;
-    --perigo-suave: #3b1715;
-    --alerta: #f5c060;
-    --alerta-suave: #3a2a0b;
+    --fundo: #0a0a0a;
+    --superficie: #141414;
+    --superficie-2: #1c1c1c;
+    --texto: #f5f1e8;
+    --texto-suave: #a3a3a3;
+    --borda: #2a2620;
+    --primaria: #cda35c;
+    --primaria-texto: #0a0a0a;
+    --primaria-suave: #262013;
+    --perigo: #f08a7a;
+    --perigo-suave: #34160f;
+    --alerta: #f2a65a;
+    --alerta-suave: #33220f;
     --ok: #7fd49a;
-    --ok-suave: #12301c;
+    --ok-suave: #12291a;
     color-scheme: dark;
   }
 }
@@ -57,7 +58,8 @@
   --color-alerta-suave: var(--alerta-suave);
   --color-ok: var(--ok);
   --color-ok-suave: var(--ok-suave);
-  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-sans: var(--font-manrope), 'Segoe UI', system-ui, sans-serif;
+  --font-display: var(--font-oswald), 'Barlow Condensed', 'Arial Narrow', sans-serif;
 }
 
 /* Tamanho da letra escolhido em Configurações (o corpo nunca fica abaixo de 16px) */
@@ -75,10 +77,41 @@ html[data-fonte='muito-grande'] {
 body {
   background: var(--fundo);
   color: var(--texto);
-  font-family: var(--font-sans);
-  line-height: 1.45;
+  font-family: var(--font-manrope), 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
   overscroll-behavior-y: contain;
   -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-oswald), 'Arial Narrow', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-wrap: balance;
+}
+
+/* Rótulo pequeno em caixa alta, como os "eyebrows" do site */
+.sobretitulo {
+  font-family: var(--font-oswald), 'Arial Narrow', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+  color: var(--primaria);
+}
+
+.linha-ouro {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primaria) 50%, transparent);
+  opacity: 0.5;
+}
+
+.numero {
+  font-family: var(--font-oswald), 'Arial Narrow', sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
 }
 
 .tabular {

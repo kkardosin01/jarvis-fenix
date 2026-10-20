@@ -16,7 +16,7 @@ export function Cabecalho({ titulo, subtitulo, direita }: { titulo: string; subt
     <header className="pt-seguro sticky top-0 z-20 border-b border-borda bg-fundo/95 backdrop-blur">
       <div className="flex min-h-16 items-center justify-between gap-3 px-4 py-3">
         <div className="min-w-0">
-          <h1 className="truncate text-2xl font-bold">{titulo}</h1>
+          <h1 className="truncate text-3xl">{titulo}</h1>
           {subtitulo && <p className="text-sm text-suave">{subtitulo}</p>}
         </div>
         {direita && <div className="flex shrink-0 items-center gap-2">{direita}</div>}
@@ -280,7 +280,7 @@ export function Modal({ aberto, aoFechar, titulo, children }: { aberto: boolean;
       className="m-0 mt-auto max-h-[92dvh] w-full max-w-none overflow-y-auto rounded-t-3xl border border-borda bg-superficie p-0 text-texto backdrop:bg-black/50 sm:m-auto sm:max-w-lg sm:rounded-3xl"
     >
       <div className="pb-seguro p-5">
-        <h2 className="mb-4 text-2xl font-bold">{titulo}</h2>
+        <h2 className="mb-4 text-3xl">{titulo}</h2>
         {children}
       </div>
     </dialog>

@@ -10,8 +10,10 @@ export default async function Login() {
     <main className="mx-auto flex min-h-dvh max-w-md flex-col justify-center gap-8 px-6">
       <div className="flex flex-col items-center gap-4 text-center">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/icones/icone-192.png" alt="" width={96} height={96} className="rounded-3xl" />
-        <h1 className="text-3xl font-bold">Jarvis Fênix</h1>
+        <img src="/marca/fenix-emblema.png" alt="" width={160} height={143} />
+        <p className="sobretitulo">Comercial Fênix</p>
+        <h1 className="text-5xl">Jarvis Fênix</h1>
+        <div className="linha-ouro w-40" aria-hidden />
         <p className="text-lg text-suave">Entre com a sua conta Google para ver o dia da Fênix.</p>
       </div>
       <form

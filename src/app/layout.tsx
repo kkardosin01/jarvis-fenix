@@ -1,5 +1,10 @@
 import type { Metadata, Viewport } from 'next'
+import { Manrope, Oswald } from 'next/font/google'
 import './globals.css'
+
+// Mesmas fontes do site da Fênix (servidas pelo próprio app, sem chamar o Google no navegador)
+const oswald = Oswald({ subsets: ['latin'], variable: '--font-oswald', display: 'swap', weight: ['400', '500', '600'] })
+const manrope = Manrope({ subsets: ['latin'], variable: '--font-manrope', display: 'swap' })
 
 export const metadata: Metadata = {
   title: 'Jarvis Fênix',
@@ -22,8 +27,8 @@ export const viewport: Viewport = {
   initialScale: 1,
   viewportFit: 'cover',
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#1f2933' },
-    { media: '(prefers-color-scheme: dark)', color: '#0e1116' }
+    { media: '(prefers-color-scheme: light)', color: '#f5f1e8' },
+    { media: '(prefers-color-scheme: dark)', color: '#0a0a0a' }
   ]
 }
 
@@ -32,7 +37,7 @@ const scriptFonte = `try{var f=localStorage.getItem('jarvis:fonte');if(f)documen
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
+    <html lang="pt-BR" suppressHydrationWarning className={`${oswald.variable} ${manrope.variable}`}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: scriptFonte }} />
       </head>

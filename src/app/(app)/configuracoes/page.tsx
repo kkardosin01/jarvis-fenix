@@ -296,7 +296,7 @@ function SecaoContas() {
 
   return (
     <Cartao>
-      <h2 className="text-xl font-bold">Contas de e-mail pessoais</h2>
+      <h2 className="text-2xl">Contas de e-mail pessoais</h2>
       <p className="mt-1 mb-3 text-base text-suave">
         O Jarvis só <b>lê</b> estes e-mails para achar boletos: nunca envia, apaga ou marca como lido. O e-mail da empresa já é lido pelo resumo da nuvem.
       </p>
@@ -351,7 +351,7 @@ function SecaoNotificacoes() {
 
   return (
     <Cartao>
-      <h2 className="flex items-center gap-2 text-xl font-bold">
+      <h2 className="flex items-center gap-2 text-2xl">
         <Bell size={22} aria-hidden /> Notificações
       </h2>
       <p className="mt-1 text-base">{texto[s]}</p>
@@ -419,7 +419,7 @@ function SecaoFonte() {
   }
   return (
     <Cartao>
-      <h2 className="mb-3 text-xl font-bold">Tamanho da letra</h2>
+      <h2 className="mb-3 text-2xl">Tamanho da letra</h2>
       <Chips
         rotulo="Tamanho da letra"
         valor={fonte}
@@ -442,14 +442,14 @@ export default function Configuracoes() {
         <Link href="/" aria-label="Voltar para Hoje" className="flex size-12 items-center justify-center rounded-full">
           <ArrowLeft size={26} aria-hidden />
         </Link>
-        <h1 className="text-2xl font-bold">Configurações</h1>
+        <h1 className="text-3xl">Configurações</h1>
       </header>
       <main className="flex flex-col gap-4 px-4 pt-4">
         <SecaoContas />
         <SecaoNotificacoes />
         <SecaoFonte />
         <Cartao>
-          <h2 className="text-xl font-bold">Sua conta</h2>
+          <h2 className="text-2xl">Sua conta</h2>
           <p className="mt-1 mb-3 text-base break-all text-suave">Entrou como {email}</p>
           <form
             action={async () => {

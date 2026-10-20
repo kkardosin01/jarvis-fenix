@@ -1,5 +1,5 @@
 // Service worker do Jarvis Fênix: abre sem internet (último resumo salvo) e recebe notificações.
-const VERSAO = 'jarvis-v1'
+const VERSAO = 'jarvis-v2'
 const CACHE_PAGINAS = `${VERSAO}-paginas`
 const CACHE_ESTATICOS = `${VERSAO}-estaticos`
 const CACHE_DADOS = `${VERSAO}-dados`
