@@ -2,7 +2,7 @@
 
 import { AlertTriangle, Building2, CalendarClock, Mail, RefreshCw, Settings, Users } from 'lucide-react'
 import Link from 'next/link'
-import { dataPorExtenso, formatarMoeda, saudacao } from '@/core/ptbr'
+import { dataPorExtenso, formatarMoeda, saudacao } from 'jarvis-fenix-core/ptbr'
 import { BannerNotificacoes } from '@/components/banner-notificacoes'
 import { usePainel } from '@/components/provedor'
 import { AvisoEstado, Botao, Cartao, Conteudo, Esqueleto, PuxarParaAtualizar, cx } from '@/components/ui'

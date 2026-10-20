@@ -1,7 +1,7 @@
 // Lê a planilha e monta os dados de todas as telas.
 
 import 'server-only'
-import { hojeISO } from '@/core/ptbr'
+import { hojeISO } from 'jarvis-fenix-core/ptbr'
 import { ABAS_LEITURA } from './sheets'
 import { montarDados } from './painel'
 import { esconderPagos } from './pagos'

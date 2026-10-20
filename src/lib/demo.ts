@@ -1,7 +1,7 @@
 // Dados FICTÍCIOS para o modo demonstração (só em desenvolvimento, JARVIS_DEMO=1).
 // Passam pela mesma conversão da planilha real, então a tela fica igual.
 
-import { hojeISO, somarDias } from '@/core/ptbr'
+import { hojeISO, somarDias } from 'jarvis-fenix-core/ptbr'
 import { matrizParaLinhas, type Aba, type AbaLida } from './sheets'
 import { montarDados } from './painel'
 import type { RespostaPainel } from './tipos'

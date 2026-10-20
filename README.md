@@ -8,7 +8,7 @@ O "cérebro" continua na nuvem e **não é alterado** por este app: as tarefas a
 - **escreve só** em `Boletos_Manual` (lançar boleto, marcar como pago) e `Boletos_Outras_Contas` (boletos achados nos e-mails pessoais) — qualquer outra escrita é bloqueada no código (`src/lib/sheets.ts`);
 - **lê** (somente leitura, por IMAP) as contas de e-mail **pessoais** do Tulio para achar boletos que não chegam no e-mail da empresa.
 
-O app de computador (`jarvis-fenix-desktop`) usa os **mesmos extratores**: `src/core/` é cópia de `jarvis-fenix-desktop/src/shared/` + `src/main/mail/extrair.ts`. Se mudar um, mude o outro — é isso que faz os dois acharem e deduplicarem boletos igual.
+O app de computador (`jarvis-fenix-desktop`) usa os **mesmos extratores**: os dois dependem do pacote `jarvis-fenix-core` (pt-BR, linha digitável/PIX, extração e deduplicação), guardado em `vendor/` como tarball — por isso o build da Vercel não precisa de token. Para mudar o núcleo, altere o repositório `jarvis-fenix-core` e rode `npm run entregar` lá; não edite o núcleo aqui.
 
 ---
 
@@ -168,7 +168,7 @@ Os e-mails e PDFs dos testes são **fictícios**, gerados em `tests/fixtures/`.
 Estrutura:
 
 ```
-src/core/          núcleo compartilhado com o app de computador (pt-BR, boletos, extratores)
+vendor/            jarvis-fenix-core (tarball): núcleo compartilhado com o app de computador
 src/lib/           servidor: planilha, Supabase, IMAP, sincronização, push, notificações
 src/app/(app)/     as telas (Hoje, Contas, Clientes, E-mails, Prospecção, Configurações)
 src/app/api/       rotas (painel, boletos, contas de e-mail, push, crons)

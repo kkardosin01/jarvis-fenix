@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { paraConta } from '../../src/core/boletos'
+import { paraConta } from 'jarvis-fenix-core/boletos'
 import { Planilha, type SheetsApi } from '../../src/lib/sheets'
 
 const registrados: string[] = []

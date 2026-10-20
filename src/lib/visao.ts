@@ -1,6 +1,6 @@
 // Contas/situações para as telas (sem rede).
 
-import type { Conta, Situacao } from '@/core/types'
+import type { Conta, Situacao } from 'jarvis-fenix-core/types'
 
 export function tomSituacao(s: Situacao | null): 'perigo' | 'alerta' | 'neutro' {
   if (s === 'Atrasado' || s === 'Vencido há mais de 30 dias') return 'perigo'

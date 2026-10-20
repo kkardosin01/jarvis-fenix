@@ -1,7 +1,7 @@
 'use client'
 
 import { MessageCircle, Phone } from 'lucide-react'
-import { linksWhatsApp, normalizarTelefone } from '@/core/whatsapp'
+import { linksWhatsApp, normalizarTelefone } from 'jarvis-fenix-core/whatsapp'
 import { usePainel } from '@/components/provedor'
 import { AvisoEstado, BotaoCopiar, Cabecalho, Conteudo, Etiqueta, LinkBotao, PuxarParaAtualizar, Vazio } from '@/components/ui'
 

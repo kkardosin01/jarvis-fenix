@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from 'vitest'
 import { Planilha, type SheetsApi } from '../../src/lib/sheets'
 import { analisarMensagem } from '../../src/lib/mail/imap'
 import { estadoVazio, normalizarEstado, prepararPanorama, sincronizarConta, type Buscar, type ContaSync } from '../../src/lib/mail/sync'
-import { formatarLinhaDigitavel } from '../../src/core/boleto-codigo'
+import { formatarLinhaDigitavel } from 'jarvis-fenix-core/boleto-codigo'
 import { emailCartao, emailCondominio, emailEscola, emailFuturo, emailLuz, emailPropaganda, linhaCondominio } from '../fixtures/emails'
 
 const CAB_OUTRAS = ['vencimento', 'beneficiario', 'valor', 'conta', 'origem', 'situacao', 'como_pagar', 'observacao', 'conta_email', 'id_mensagem']

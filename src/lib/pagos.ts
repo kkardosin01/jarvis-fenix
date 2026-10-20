@@ -2,8 +2,8 @@
 // - "outras:<id_mensagem>": linha removida de Boletos_Outras_Contas (a sincronização não regrava)
 // - "nuvem:<beneficiário>|<vencimento>": linha da aba Boletos (a nuvem reescreve a aba todo dia)
 
-import { normalizarTexto } from '@/core/ptbr'
-import type { Conta } from '@/core/types'
+import { normalizarTexto } from 'jarvis-fenix-core/ptbr'
+import type { Conta } from 'jarvis-fenix-core/types'
 
 export function chavePagoNuvem(beneficiario: string, vencimento: string | null): string {
   return `nuvem:${normalizarTexto(beneficiario)}|${vencimento ?? ''}`

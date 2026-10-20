@@ -1,6 +1,6 @@
 // Tipos que só existem no app web (o núcleo compartilhado fica em src/core).
 
-import type { ContaPFPJ, DadosPainel, TipoContaEmail } from '@/core/types'
+import type { ContaPFPJ, DadosPainel, TipoContaEmail } from 'jarvis-fenix-core/types'
 
 /** Conta de e-mail como o navegador vê: nunca com a senha. */
 export interface ContaEmailWeb {

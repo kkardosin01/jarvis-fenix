@@ -1,7 +1,7 @@
 'use client'
 
 import { Info, PenLine } from 'lucide-react'
-import { RASCUNHOS_EMPRESA } from '@/core/links'
+import { RASCUNHOS_EMPRESA } from 'jarvis-fenix-core/links'
 import { usePainel } from '@/components/provedor'
 import { AvisoEstado, Cabecalho, Conteudo, Etiqueta, LinkBotao, PuxarParaAtualizar, Vazio } from '@/components/ui'
 

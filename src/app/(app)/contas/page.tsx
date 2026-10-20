@@ -3,10 +3,10 @@
 import { CheckCircle2, ExternalLink, Plus } from 'lucide-react'
 import { useSearchParams } from 'next/navigation'
 import { Suspense, useMemo, useState } from 'react'
-import { encontrarLinhasDigitaveis, formatarLinhaDigitavel } from '@/core/boleto-codigo'
-import { linkEmailDaConta } from '@/core/links'
-import { formatarDiaMes, formatarMoeda, hojeISO, parseNumeroBR } from '@/core/ptbr'
-import type { Conta } from '@/core/types'
+import { encontrarLinhasDigitaveis, formatarLinhaDigitavel } from 'jarvis-fenix-core/boleto-codigo'
+import { linkEmailDaConta } from 'jarvis-fenix-core/links'
+import { formatarDiaMes, formatarMoeda, hojeISO, parseNumeroBR } from 'jarvis-fenix-core/ptbr'
+import type { Conta } from 'jarvis-fenix-core/types'
 import { usePainel } from '@/components/provedor'
 import {
   AvisoEstado,

@@ -2,8 +2,8 @@
 // Sempre relê a aba antes de escrever, para achar a linha certa (nunca posição fixa).
 
 import 'server-only'
-import { chaveBeneficiario, coluna, manualPago, manualVazia, paraConta } from '@/core/boletos'
-import { hojeISO } from '@/core/ptbr'
+import { chaveBeneficiario, coluna, manualPago, manualVazia, paraConta } from 'jarvis-fenix-core/boletos'
+import { hojeISO } from 'jarvis-fenix-core/ptbr'
 import type { LancarBoleto } from './esquemas'
 import { chavePagoNuvem, chavePagoOutras } from './pagos'
 import { registrarPago } from './pagos-db'

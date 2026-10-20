@@ -12,10 +12,10 @@ import {
   paraConta,
   registrarChaves,
   type ChavesExistentes
-} from '@/core/boletos'
-import { formatarLinhaDigitavel } from '@/core/boleto-codigo'
-import { extrairBoletos, type BoletoExtraido, type MensagemCandidata } from '@/core/extrair'
-import type { Conta, ContaPFPJ } from '@/core/types'
+} from 'jarvis-fenix-core/boletos'
+import { formatarLinhaDigitavel } from 'jarvis-fenix-core/boleto-codigo'
+import { extrairBoletos, type BoletoExtraido, type MensagemCandidata } from 'jarvis-fenix-core/extrair'
+import type { Conta, ContaPFPJ } from 'jarvis-fenix-core/types'
 import type { Planilha } from '../sheets'
 import type { CursorImap, ResultadoBusca } from './imap'
 

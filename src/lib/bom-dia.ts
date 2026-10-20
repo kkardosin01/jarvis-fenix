@@ -1,7 +1,7 @@
 // Notificação diária das 9h05 (e nova tentativa às 9h35).
 
 import 'server-only'
-import { hojeISO } from '@/core/ptbr'
+import { hojeISO } from 'jarvis-fenix-core/ptbr'
 import { carregarPainel } from './dados'
 import { gravarEstado, lerEstado } from './estado'
 import { decidirBomDia, resumoDeHoje, TEXTO_RESUMO_ATRASADO, textoBomDia, type EstadoBomDia } from './notificacao'

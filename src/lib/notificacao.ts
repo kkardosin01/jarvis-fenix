@@ -1,7 +1,7 @@
 // Textos e regras das notificações (sem rede, para testar).
 
-import { agoraSP, formatarDiaMes, formatarMoeda, hojeISO } from '@/core/ptbr'
-import type { DadosPainel } from '@/core/types'
+import { agoraSP, formatarDiaMes, formatarMoeda, hojeISO } from 'jarvis-fenix-core/ptbr'
+import type { DadosPainel } from 'jarvis-fenix-core/types'
 
 /** Sem notificação entre 22h e 7h. */
 export function horarioSilencioso(hora: number): boolean {

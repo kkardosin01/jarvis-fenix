@@ -4,9 +4,9 @@
 // (a Vercel corta a função depois de alguns minutos).
 
 import 'server-only'
-import { normalizarTexto } from '@/core/ptbr'
-import { PALAVRAS_CHAVE, type AnexoTexto, type MensagemCandidata } from '@/core/extrair'
-import type { TipoContaEmail } from '@/core/types'
+import { normalizarTexto } from 'jarvis-fenix-core/ptbr'
+import { PALAVRAS_CHAVE, type AnexoTexto, type MensagemCandidata } from 'jarvis-fenix-core/extrair'
+import type { TipoContaEmail } from 'jarvis-fenix-core/types'
 import { textoDoPdf } from './pdf'
 
 export interface ConfigImap {

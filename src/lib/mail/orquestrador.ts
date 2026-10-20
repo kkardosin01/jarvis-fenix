@@ -1,7 +1,7 @@
 // Roda a sincronização de todas as contas (ou de uma), uma por vez, sem que o erro de uma trave as outras.
 
 import 'server-only'
-import { hojeISO } from '@/core/ptbr'
+import { hojeISO } from 'jarvis-fenix-core/ptbr'
 import { contasParaSincronizar, liberarConta, travarConta } from '../contas-email'
 import { agoraSilencioso, textoNovoBoleto } from '../notificacao'
 import { lerPagos } from '../pagos-db'

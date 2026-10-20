@@ -4,7 +4,7 @@
 
 import { Check, Copy, RefreshCw, WifiOff } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
-import { horaMinuto } from '@/core/ptbr'
+import { horaMinuto } from 'jarvis-fenix-core/ptbr'
 import { usePainel } from './provedor'
 
 export function cx(...c: (string | false | null | undefined)[]): string {

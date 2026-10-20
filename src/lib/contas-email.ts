@@ -1,7 +1,7 @@
 // Contas de e-mail pessoais guardadas no Supabase. A senha vai cifrada e nunca sai do servidor.
 
 import 'server-only'
-import type { ContaPFPJ, TipoContaEmail } from '@/core/types'
+import type { ContaPFPJ, TipoContaEmail } from 'jarvis-fenix-core/types'
 import { cifrar, decifrar } from './cripto'
 import { normalizarEstado, type EstadoContaSync } from './mail/sync'
 import { supabase } from './supabase'

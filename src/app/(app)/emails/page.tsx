@@ -2,7 +2,7 @@
 
 import { ExternalLink } from 'lucide-react'
 import { useMemo, useState } from 'react'
-import { GMAIL_EMPRESA } from '@/core/links'
+import { GMAIL_EMPRESA } from 'jarvis-fenix-core/links'
 import { usePainel } from '@/components/provedor'
 import { AvisoEstado, Cabecalho, Chips, Conteudo, Etiqueta, LinkBotao, PuxarParaAtualizar, Vazio } from '@/components/ui'
 import { pesoUrgencia, urgenciaTom } from '@/lib/visao'
