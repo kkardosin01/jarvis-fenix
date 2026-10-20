@@ -61,7 +61,10 @@ export async function sincronizarContas(o: OpcoesOrquestrador): Promise<Resultad
     } catch (e) {
       // Guardamos o estado parcial: o que já foi gravado não é regravado
       const erro = mensagemErroImap(e)
-      console.error(`sync: conta ${conta.id} falhou (${(e as { code?: string }).code ?? 'erro'})`)
+      // Só o tipo e o começo da mensagem técnica (nunca conteúdo de e-mail) para conseguir diagnosticar
+      const err = e as { name?: string; code?: string; message?: string; stack?: string }
+      const onde = (err.stack ?? '').split('\n').slice(1, 3).map((l) => l.trim().replace(/\(.*\/node_modules\//, '(')).join(' | ')
+      console.error(`sync: conta ${conta.id} falhou: ${err.name ?? 'erro'} ${err.code ?? ''} ${(err.message ?? '').slice(0, 160)} @ ${onde}`)
       await liberarConta(conta.id, { estado: conta.estado, erro, novos: 0, boletosAchados: conta.boletosAchados, pendente: false, concluiu: false })
       resultados.push({ contaId: conta.id, novos: 0, ignorados: 0, semVencimento: 0, pendente: false, erro })
     }

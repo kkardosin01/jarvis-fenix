@@ -18,7 +18,11 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   // Pacotes de e-mail/PDF rodam como Node puro (não passam pelo bundler)
-  serverExternalPackages: ['imapflow', 'mailparser', 'pdfjs-dist'],
+  serverExternalPackages: ['imapflow', 'mailparser', 'pdfjs-dist', '@napi-rs/canvas'],
+  // O pdfjs carrega o canvas e o worker em tempo de execução; o rastreador não os acha sozinho
+  outputFileTracingIncludes: {
+    '/api/**': ['./node_modules/@napi-rs/**/*', './node_modules/pdfjs-dist/legacy/build/**/*']
+  },
   async headers() {
     return [
       {

@@ -1,4 +1,5 @@
-// Texto de anexos PDF com pdfjs-dist (JS puro, sem módulos nativos).
+// Texto de anexos PDF com pdfjs-dist. No servidor ele precisa do @napi-rs/canvas (DOMMatrix);
+// next.config.ts garante que os dois entram no pacote da Vercel.
 
 const MAX_PAGINAS = 6
 
@@ -8,10 +9,11 @@ export interface TextoPdf {
 }
 
 export async function textoDoPdf(conteudo: Uint8Array | Buffer): Promise<TextoPdf> {
-  const pdfjs = await import('pdfjs-dist/legacy/build/pdf.mjs')
   // Cópia: o pdfjs transfere o buffer para o worker
   const data = new Uint8Array(conteudo)
   try {
+    // Dentro do try: se a biblioteca não carregar, o PDF conta como ilegível e a sincronização segue
+    const pdfjs = await import('pdfjs-dist/legacy/build/pdf.mjs')
     const doc = await pdfjs.getDocument({
       data,
       isEvalSupported: false,

@@ -55,6 +55,8 @@ export function mensagemErroImap(e: unknown): string {
   if (err.code === 'ENOTFOUND' || err.code === 'EAI_AGAIN') return 'Servidor de e-mail não encontrado. Confira o endereço.'
   if (err.code === 'ECONNREFUSED' || err.code === 'ETIMEDOUT') return 'O servidor de e-mail não respondeu. Confira servidor e porta.'
   if (/IMAP.*disabled|IMAP access/i.test(texto)) return 'O acesso IMAP está desligado nesta conta.'
+  // Erro que não veio do servidor de e-mail (ex.: ao ler um anexo): a conexão em si funcionou
+  if (!err.responseText && !err.code) return 'A leitura parou num e-mail com problema. Tentamos de novo na próxima sincronização.'
   return 'Não foi possível conectar ao e-mail.'
 }
 
