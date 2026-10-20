@@ -1,5 +1,7 @@
 # Jarvis Fênix — app de celular
 
+> **Em produção:** <https://jarvis-fenix.vercel.app> · como está implantado: [docs/PRODUCAO.md](docs/PRODUCAO.md) · por que foi feito assim: [docs/DECISOES.md](docs/DECISOES.md) · [CHANGELOG](CHANGELOG.md)
+
 App instalável (PWA) para Android e iPhone com o dia da **Comercial Fênix SC Ltda** num toque: contas a pagar, clientes para ligar, e-mails que importam e prospecção.
 
 O "cérebro" continua na nuvem e **não é alterado** por este app: as tarefas agendadas do Claude (prospecção às 8h13 nos dias úteis e briefing às 8h38) reescrevem a planilha **Jarvis_Fenix**. Este app:
@@ -94,7 +96,7 @@ openssl rand -hex 32   # EMAIL_ENC_KEY (não troque depois: as senhas salvas dei
 
 ### 6. Vercel
 
-1. **Add New → Project** → importe o repositório `kkardosin01/jarvis-fenix` (framework Next.js, sem mudar nada).
+1. **Add New → Project** → importe o repositório `kkardosin01/jarvis-fenix`. Confira se o **Framework Preset** é **Next.js**: um projeto criado pelo CLI nasce sem framework e todas as rotas dão 404.
 2. **Settings → Environment Variables**: cadastre todas as variáveis de `.env.example` (Production).
 3. Deploy. Os crons de `vercel.json` são criados sozinhos (veja a próxima seção).
 4. Volte ao Google Cloud e confira se a URL final está nas origens/redirecionamentos do OAuth.
@@ -113,7 +115,7 @@ Todas exigem `Authorization: Bearer ${CRON_SECRET}` (a Vercel manda sozinha).
 
 **Plano Hobby (grátis):** cron só 1x por dia e pode disparar **em qualquer minuto dentro da hora** marcada (o "9h05" pode sair às 9h50). O código aguenta a ordem trocada, mas o horário não é exato e não há sincronização de hora em hora. Duas saídas:
 
-- **Supabase pg_cron (grátis, recomendado):** rode `supabase/cron-de-hora-em-hora.sql`. Horário exato, sync de hora em hora das 7h às 22h. Pode manter os crons da Vercel como reserva.
+- **Supabase pg_cron (grátis, recomendado — é o que está em uso):** rode `supabase/cron-de-hora-em-hora.sql`. Horário exato, sync de hora em hora das 7h às 22h. Pode manter os crons da Vercel como reserva.
 - **Vercel Pro (US$ 20/mês):** horário exato e crons frequentes direto no `vercel.json`.
 
 Além dos crons, o app sincroniza ao abrir (se a última vez foi há mais de 30 min) e no botão "Sincronizar agora".
