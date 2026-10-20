@@ -1,0 +1,115 @@
+@import 'tailwindcss';
+
+/* Paleta sóbria de empresa de saúde. Contraste AA nos dois temas. */
+:root {
+  --fundo: #f4f6f8;
+  --superficie: #ffffff;
+  --superficie-2: #eef1f4;
+  --texto: #111827;
+  --texto-suave: #4b5563;
+  --borda: #d6dbe1;
+  --primaria: #0f5c56;
+  --primaria-texto: #ffffff;
+  --primaria-suave: #e3f0f3;
+  --perigo: #b42318;
+  --perigo-suave: #fde8e7;
+  --alerta: #8a5300;
+  --alerta-suave: #fdf1d8;
+  --ok: #1d6b3a;
+  --ok-suave: #e3f3e8;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo: #0e1116;
+    --superficie: #171b22;
+    --superficie-2: #1f252e;
+    --texto: #f1f4f8;
+    --texto-suave: #aab3bf;
+    --borda: #2e3642;
+    --primaria: #6ccbb8;
+    --primaria-texto: #062420;
+    --primaria-suave: #12313a;
+    --perigo: #ff8a80;
+    --perigo-suave: #3b1715;
+    --alerta: #f5c060;
+    --alerta-suave: #3a2a0b;
+    --ok: #7fd49a;
+    --ok-suave: #12301c;
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --color-fundo: var(--fundo);
+  --color-superficie: var(--superficie);
+  --color-superficie-2: var(--superficie-2);
+  --color-texto: var(--texto);
+  --color-suave: var(--texto-suave);
+  --color-borda: var(--borda);
+  --color-primaria: var(--primaria);
+  --color-primaria-texto: var(--primaria-texto);
+  --color-primaria-suave: var(--primaria-suave);
+  --color-perigo: var(--perigo);
+  --color-perigo-suave: var(--perigo-suave);
+  --color-alerta: var(--alerta);
+  --color-alerta-suave: var(--alerta-suave);
+  --color-ok: var(--ok);
+  --color-ok-suave: var(--ok-suave);
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Tamanho da letra escolhido em Configurações (o corpo nunca fica abaixo de 16px) */
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+html[data-fonte='grande'] {
+  font-size: 112.5%;
+}
+html[data-fonte='muito-grande'] {
+  font-size: 125%;
+}
+
+body {
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: var(--font-sans);
+  line-height: 1.45;
+  overscroll-behavior-y: contain;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+:focus-visible {
+  outline: 3px solid var(--primaria);
+  outline-offset: 2px;
+}
+
+@keyframes pulsar {
+  50% {
+    opacity: 0.5;
+  }
+}
+.esqueleto {
+  background: var(--superficie-2);
+  border-radius: 0.75rem;
+  animation: pulsar 1.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .esqueleto {
+    animation: none;
+  }
+}
+
+.pb-seguro {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.pt-seguro {
+  padding-top: env(safe-area-inset-top);
+}
