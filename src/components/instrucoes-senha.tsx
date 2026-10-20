@@ -1,14 +1,22 @@
 // Passo a passo da senha de app, com os "prints" descritos em texto.
 
+function Link({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" className="font-semibold break-all text-primaria underline">
+      {children}
+    </a>
+  )
+}
+
 export function InstrucoesGmail() {
   return (
     <ol className="list-decimal space-y-3 pl-6 text-base">
       <li>
-        No celular ou computador, abra <b>myaccount.google.com/signinoptions/twosv</b> e entre no Gmail pessoal.
+        Toque em <Link href="https://myaccount.google.com/signinoptions/twosv">myaccount.google.com/signinoptions/twosv</Link> e entre no Gmail pessoal.
         <span className="block text-suave">Você vê uma tela azul e branca “Verificação em duas etapas”. Se estiver desligada, toque em “Ativar” e siga com o seu celular.</span>
       </li>
       <li>
-        Depois abra <b>myaccount.google.com/apppasswords</b>.
+        Depois toque em <Link href="https://myaccount.google.com/apppasswords">myaccount.google.com/apppasswords</Link>.
         <span className="block text-suave">Aparece a tela “Senhas de app”, com um campo “Nome do app”.</span>
       </li>
       <li>
@@ -28,7 +36,7 @@ export function InstrucoesOutlook() {
   return (
     <ol className="list-decimal space-y-3 pl-6 text-base">
       <li>
-        Abra <b>account.live.com/proofs/manage/additional</b> e entre na conta Microsoft (Outlook/Hotmail).
+        Toque em <Link href="https://account.live.com/proofs/manage/additional">account.live.com/proofs/manage/additional</Link> e entre na conta Microsoft (Outlook/Hotmail).
         <span className="block text-suave">Você vê a página “Opções de segurança avançadas”.</span>
       </li>
       <li>
