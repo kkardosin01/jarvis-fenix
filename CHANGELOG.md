@@ -1,5 +1,12 @@
 # Histórico
 
+## 0.1.1 — 20/10/2026 · identidade visual do site
+
+- Ícones do app (Android, iPhone, notificação) com a fênix dourada sobre preto do site comercial-fenix; fonte em `assets/fenix-emblema.png`, gerados por `npm run icones`.
+- Cores do site: tema escuro preto/carvão/dourado; tema claro creme com dourado escuro (contraste AA). Títulos em Oswald e texto em Manrope, as mesmas fontes do site.
+- Tela de entrada e "Acesso não autorizado" com o emblema. Cache do service worker renovado (`jarvis-v2`) para os ícones novos aparecerem.
+- Publicado em https://jarvis-fenix.vercel.app.
+
 ## 0.1.0 — 19/10/2026 · primeira versão, publicada em https://jarvis-fenix.vercel.app
 
 **App**
